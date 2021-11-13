@@ -30,7 +30,12 @@
       "ProjectGuid": "bc153f71-a9ba-4f9e-9bf0-ff40bb07aecb",
       "DisplayName": "BlogMicroservice.Services",
       "ColorIndex": 4
+    },
+    "69027925-ae94-4640-bb82-427cc38dd0ae": {
+      "ProjectGuid": "69027925-ae94-4640-bb82-427cc38dd0ae",
+      "DisplayName": "BlogMicroservice.DataAccess",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }

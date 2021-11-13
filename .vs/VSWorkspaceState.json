@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BlogMicroservice.Application",
     "\\BlogMicroservice.Application\\Repositories",
-    "\\BlogMicroservice.Infraestruture",
     "\\BlogMicroserviceAPI"
   ],
-  "SelectedNode": "\\BlogMicroserviceAPI\\BlogMicroserviceAPI.sln",
+  "SelectedNode": "\\BlogMicroservice.Services",
   "PreviewInSolutionExplorer": false
 }

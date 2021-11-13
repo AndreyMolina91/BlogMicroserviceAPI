@@ -23,18 +23,14 @@ namespace BlogMicroservice.API.Controllers
             Herramientas para trabajar:
             WorkUnity - Por implementar.
          */
-
-        private readonly ApplicationDbContext _context;
         private readonly IWorkUnity _workUnity;
         private readonly IMapper _mapper;
         protected ResponseDto _response;
 
-        public PromoRatingController(ApplicationDbContext context,
-                                     IWorkUnity workUnity,
+        public PromoRatingController(IWorkUnity workUnity,
                                      IMapper mapper)
         {
             //inicializar herramientas a utilizar
-            _context = context;
             _workUnity = workUnity;
             _mapper = mapper;
             _response = new ResponseDto();
@@ -42,28 +38,31 @@ namespace BlogMicroservice.API.Controllers
 
 
         [HttpPost]//Por medio de la unidad de trabajo
-        public async Task<GetPromoRatingDto> AddRating(int id, GetPromoRatingDto promoRatingDto)
+        public async Task<PostPutPromoRatingDto> AddRating(PostPutPromoRatingDto promoRatingDto)
         {
-            var promoRating = _mapper.Map<GetPromoRatingDto, PromoRatingModel>(promoRatingDto);
+            var promoRating = _mapper.Map<PostPutPromoRatingDto, PromoRatingModel>(promoRatingDto);
             await _workUnity.PromoRating.AddT(promoRating);
             _workUnity.SaveData();
-            return _mapper.Map<PromoRatingModel, GetPromoRatingDto>(promoRating);
+            return _mapper.Map<PromoRatingModel, PostPutPromoRatingDto>(promoRating);
         }
 
 
-        [HttpGet]//Usando unidad de trabajo
-        public async Task<ActionResult<List<GetPromoRatingDto>>> GetRatings(int blogPromoId)
+        [HttpGet]//Usando unidad de trabajo obteniendo el objeto promo mediante la url
+        public async Task<ActionResult<IEnumerable<GetPromoRatingDto>>> GetRatings()
         {
-            var existBlogPromo = await _context.BlogPromo.AnyAsync(x=>x.Id == blogPromoId);
-            if (!existBlogPromo)
+            try
             {
-                return NotFound();
+                var listRatings = await _workUnity.PromoRating.GetTAll();
+                _response.Result = listRatings;
+                _response.DisplayMessage = "Listado de ratings";
             }
-            else 
+            catch (Exception ex)
             {
-                   var listRating = await _context.RatingPromo.Where(x=>x.BlogPromoId == blogPromoId).ToListAsync();
-                   return _mapper.Map<List<GetPromoRatingDto>>(listRating);
+                _response.IsSuccess = false;
+                _response.ErrorMessage = new List<string> { ex.ToString() };
             }
+            return Ok(_response);
+          
         }
 
 
@@ -73,10 +72,7 @@ namespace BlogMicroservice.API.Controllers
             var promoRating = _mapper.Map<PostPutPromoRatingDto, PromoRatingModel>(promoRatingDto);
             try
             {
-                if (id==promoRating.Id)
-                {
                     await _workUnity.PromoRating.Update(promoRating); 
-                }
             }
             catch (Exception ex)
             {

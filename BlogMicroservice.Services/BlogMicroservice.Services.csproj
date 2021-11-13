@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlogMicroservice.Infraestruture\BlogMicroservice.DataAccess.csproj" />
+    <ProjectReference Include="..\BlogMicroservice.DataAccess\BlogMicroservice.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@ using AutoMapper;
 using BlogMicroservice.Application.Repositories;
 using BlogMicroservice.Application.Repositories.IRepositories;
 using BlogMicroservice.Domain;
-using BlogMicroservice.Infraestruture;
+using BlogMicroservice.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

@@ -8425,8 +8425,8 @@
     },
     "BlogMicroservice.DataAccess/1.0.0": {
       "type": "project",
-      "path": "../BlogMicroservice.Infraestruture/BlogMicroservice.DataAccess.csproj",
-      "msbuildProject": "../BlogMicroservice.Infraestruture/BlogMicroservice.DataAccess.csproj"
+      "path": "../BlogMicroservice.DataAccess/BlogMicroservice.DataAccess.csproj",
+      "msbuildProject": "../BlogMicroservice.DataAccess/BlogMicroservice.DataAccess.csproj"
     },
     "BlogMicroservice.Domain/1.0.0": {
       "type": "project",

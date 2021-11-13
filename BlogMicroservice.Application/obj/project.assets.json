@@ -6609,8 +6609,8 @@
     },
     "BlogMicroservice.DataAccess/1.0.0": {
       "type": "project",
-      "path": "../BlogMicroservice.Infraestruture/BlogMicroservice.DataAccess.csproj",
-      "msbuildProject": "../BlogMicroservice.Infraestruture/BlogMicroservice.DataAccess.csproj"
+      "path": "../BlogMicroservice.DataAccess/BlogMicroservice.DataAccess.csproj",
+      "msbuildProject": "../BlogMicroservice.DataAccess/BlogMicroservice.DataAccess.csproj"
     },
     "BlogMicroservice.Domain/1.0.0": {
       "type": "project",
@@ -6658,8 +6658,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.Infraestruture\\BlogMicroservice.DataAccess.csproj"
+            "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.DataAccess\\BlogMicroservice.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\BlogMicroservice\\BlogMicroservice.DataAccess\\BlogMicroservice.DataAccess.csproj"
             }
           }
         }

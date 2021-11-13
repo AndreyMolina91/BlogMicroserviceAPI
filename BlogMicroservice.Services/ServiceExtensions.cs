@@ -1,4 +1,4 @@
-﻿using BlogMicroservice.Infraestruture;
+﻿using BlogMicroservice.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

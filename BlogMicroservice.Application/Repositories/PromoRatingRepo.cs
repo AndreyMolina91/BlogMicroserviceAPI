@@ -1,6 +1,6 @@
 ﻿using BlogMicroservice.Application.Repositories.IRepositories;
 using BlogMicroservice.Domain.Models;
-using BlogMicroservice.Infraestruture;
+using BlogMicroservice.DataAccess;
 using System.Linq;
 using System.Threading.Tasks;
 

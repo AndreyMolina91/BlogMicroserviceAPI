@@ -1,4 +1,4 @@
-﻿using BlogMicroservice.Infraestruture;
+﻿using BlogMicroservice.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;

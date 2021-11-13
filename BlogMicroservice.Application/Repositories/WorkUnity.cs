@@ -1,5 +1,5 @@
 ﻿using BlogMicroservice.Application.Repositories.IRepositories;
-using BlogMicroservice.Infraestruture;
+using BlogMicroservice.DataAccess;
 
 namespace BlogMicroservice.Application.Repositories
 {

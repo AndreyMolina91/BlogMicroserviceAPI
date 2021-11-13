@@ -6,7 +6,7 @@ using BlogMicroservice.Domain.Dtos;
 using BlogMicroservice.Domain.Models;
 using System.Threading.Tasks;
 using System;
-using BlogMicroservice.Infraestruture;
+using BlogMicroservice.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 

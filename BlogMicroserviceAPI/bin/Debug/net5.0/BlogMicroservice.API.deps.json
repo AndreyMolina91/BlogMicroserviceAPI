@@ -36,7 +36,6 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "BlogMicroservice.Application": "1.0.0",
-          "BlogMicroservice.DataAccess": "1.0.0",
           "BlogMicroservice.Domain": "1.0.0",
           "BlogMicroservice.Services": "1.0.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.10",

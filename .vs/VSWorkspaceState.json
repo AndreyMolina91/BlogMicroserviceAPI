@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BlogMicroservice.Application\\Repositories",
-    "\\BlogMicroserviceAPI"
+    "\\BlogMicroserviceAPI",
+    "\\BlogMicroserviceAPI\\Controllers"
   ],
-  "SelectedNode": "\\BlogMicroservice.Services",
+  "SelectedNode": "\\BlogMicroserviceAPI\\Controllers\\PromoRatingController.cs",
   "PreviewInSolutionExplorer": false
 }

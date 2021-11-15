@@ -4,7 +4,6 @@ using BlogMicroservice.Domain.Dtos;
 using BlogMicroservice.Domain.Models;
 using BlogMicroservice.DataAccess;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -23,9 +22,8 @@ namespace BlogMicroservice.API.Controllers
         private readonly IMapper _mapper;
         protected ResponseDto _response;
 
-        public BlogPromoController(ApplicationDbContext context, 
-                                             IWorkUnity workUnity,
-                                             IMapper mapper)
+        public BlogPromoController(IWorkUnity workUnity,
+                                          IMapper mapper)
         {
             _workUnity = workUnity;
             _mapper = mapper;
@@ -39,7 +37,7 @@ namespace BlogMicroservice.API.Controllers
         {
             try
             {
-                 var blogPromo = await _workUnity.BlogPromo.GetBlogPromo(id);
+                 var blogPromo = await _workUnity.BlogPromo.GetPromoWithJoin(id);
                  _response.Result = blogPromo;
                  _response.DisplayMessage = "Listado de comentarios";
             }

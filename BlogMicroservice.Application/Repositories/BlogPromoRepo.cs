@@ -21,7 +21,7 @@ namespace BlogMicroservice.Application.Repositories
         }
 
         //Metodo para encontrar BlogPromoById con los promoratings incluidos
-        public async Task<ActionResult<BlogPromoModel>> GetBlogPromo(int id)
+        public async Task<ActionResult<BlogPromoModel>> GetPromoWithJoin(int id)
         {
             var blogPromo = await _context.BlogPromo.Include(x => x.PromoRatings).FirstOrDefaultAsync(x=>x.Id == id);
             return blogPromo;

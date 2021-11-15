@@ -6,9 +6,6 @@ using BlogMicroservice.Domain.Dtos;
 using BlogMicroservice.Domain.Models;
 using System.Threading.Tasks;
 using System;
-using BlogMicroservice.DataAccess;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -82,5 +79,22 @@ namespace BlogMicroservice.API.Controllers
             return _mapper.Map<PromoRatingModel, PostPutPromoRatingDto>(promoRating);
         }
 
+        //Metodo Delete por medio de Unidad de trabajo
+        [HttpDelete]
+        public async Task<bool> DeleteRating(int ratingId)
+        {
+            if (RatingExists(ratingId))
+            {
+                await _workUnity.PromoRating.RemoveT(ratingId);
+                _workUnity.SaveData();
+            }
+            return true;
+        }
+
+        //Metodo para determinar si existe el obj
+        private bool RatingExists(int id)
+        {
+            return true;
+        }
     }
 }

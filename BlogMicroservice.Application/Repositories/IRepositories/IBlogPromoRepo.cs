@@ -8,6 +8,6 @@ namespace BlogMicroservice.Application.Repositories.IRepositories
     {
         Task Update(BlogPromoModel blogPromo);
         //Para el uso del include Ratings en el modelo Promo
-        Task<ActionResult<BlogPromoModel>> GetBlogPromo(int id);
+        Task<ActionResult<BlogPromoModel>> GetPromoWithJoin(int id);
     }
 }
